@@ -1,0 +1,17 @@
+PODS:
+  - Kiwi/ARC (2.2.4)
+  - Kiwi/NonARC (2.2.4)
+  - Kiwi/XCTest (2.2.4):
+    - Kiwi/ARC
+    - Kiwi/NonARC
+  - Regexer (1.0.0)
+
+DEPENDENCIES:
+  - Kiwi/XCTest (~> 2.2.4)
+  - Regexer (~> 1.0.0)
+
+SPEC CHECKSUMS:
+  Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66
+  Regexer: 8e0caf92199fe7fd375fb105f86506572fd7204d
+
+COCOAPODS: 0.32.1

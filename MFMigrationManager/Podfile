@@ -1,0 +1,5 @@
+podspec :path => "../MFMigrationManager.podspec"
+
+link_with 'MFMigrationManager.iOS.Tests', 'MFMigrationManager.Mac.Tests'
+
+pod 'Kiwi/XCTest', '~> 2.2.4'
