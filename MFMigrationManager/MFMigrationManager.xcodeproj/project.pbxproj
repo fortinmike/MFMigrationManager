@@ -64,6 +64,8 @@
 		4CC18D4419145C9B00CEECEC /* MFMigrationManager-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFMigrationManager-Prefix.pch"; sourceTree = "<group>"; };
 		4CC18D4519145C9B00CEECEC /* MFMigrationManager.Mac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MFMigrationManager.Mac-Info.plist"; sourceTree = "<group>"; };
 		4CC18D4A19145CA300CEECEC /* MFMigrationManagerTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MFMigrationManagerTests-Info.plist"; sourceTree = "<group>"; };
+		4CC252DC191C1E7300E49DF7 /* MFMigrationManager.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = MFMigrationManager.podspec; path = ../MFMigrationManager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4CC252DD191C1E7300E49DF7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				4CC18D4919145CA300CEECEC /* Tests */,
 				4C59965619145A4900EFA82C /* Frameworks */,
 				4C59965519145A4900EFA82C /* Products */,
+				4CC252DB191C1E5D00E49DF7 /* Supporting Files */,
 				38990A9BF186483784019B54 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -171,6 +174,15 @@
 				4CC18D4A19145CA300CEECEC /* MFMigrationManagerTests-Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		4CC252DB191C1E5D00E49DF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CC252DC191C1E7300E49DF7 /* MFMigrationManager.podspec */,
+				4CC252DD191C1E7300E49DF7 /* README.md */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
