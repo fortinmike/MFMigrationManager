@@ -20,8 +20,7 @@ describe(@"MFMigrationManager", ^
 		
 		beforeEach(^
 		{
-			migrationManager = [[MFMigrationManager alloc] initWithName:NSStringFromClass([self class])];
-			[migrationManager performSelector:@selector(setLastMigrationVersion:) withObject:nil];
+			migrationManager = [[MFMigrationManager alloc] initWithName:[[NSUUID UUID] UUIDString]];
 		});
 		
 		it(@"should accept migrations with valid version strings", ^
@@ -143,6 +142,33 @@ describe(@"MFMigrationManager", ^
 			[migrationManager whenMigratingToVersion:@"1.1" run:^{}];
 			[migrationManager whenMigratingToVersion:@"1.2" run:^{}];
 			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1.1.1" run:^{}]; }) should] raise];
+		});
+	});
+	
+	context(@"multiple migration managers", ^
+	{
+		it(@"should run migrations independently of one another", ^
+		{
+			__block BOOL migration1Ran;
+			__block BOOL migration2Ran;
+			__block BOOL migration3Ran;
+			__block BOOL migration4Ran;
+			
+			MFMigrationManager *manager1 = [MFMigrationManager migrationManagerWithName:@"Manager1"];
+			[manager1 performSelector:@selector(setLastMigrationVersion:) withObject:nil];
+			
+			MFMigrationManager *manager2 = [MFMigrationManager migrationManagerWithName:@"Manager2"];
+			[manager2 performSelector:@selector(setLastMigrationVersion:) withObject:nil];
+			
+			[manager1 whenMigratingToVersion:@"1.1" run:^{ migration1Ran = YES; }];
+			[manager2 whenMigratingToVersion:@"1.1" run:^{ migration2Ran = YES; }];
+			[manager2 whenMigratingToVersion:@"1.2" run:^{ migration3Ran = YES; }];
+			[manager1 whenMigratingToVersion:@"1.2" run:^{ migration4Ran = YES; }];
+			
+			[[theValue(migration1Ran) should] beYes];
+			[[theValue(migration2Ran) should] beYes];
+			[[theValue(migration3Ran) should] beYes];
+			[[theValue(migration4Ran) should] beYes];
 		});
 	});
 });

@@ -13,6 +13,8 @@
 
 @implementation MFMigrationManager
 {
+	VersionProviderBlock _currentVersionProviderBlock;
+	
 	NSString *_initialVersionKey;
 	NSString *_lastVersionKey;
 	
@@ -33,25 +35,37 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 
 + (instancetype)migrationManagerWithName:(NSString *)name
 {
-	return [[self alloc] initWithName:name];
+	return [[self alloc] initWithName:name currentVersionProvider:nil];
+}
+
++ (instancetype)migrationManagerWithName:(NSString *)name currentVersionProvider:(VersionProviderBlock)currentVersionProviderBlock
+{
+	return [[self alloc] initWithName:name currentVersionProvider:currentVersionProviderBlock];
+}
+
+- (id)init
+{
+	return [self initWithName:nil];
 }
 
 - (id)initWithName:(NSString *)name
 {
+	return [self initWithName:name currentVersionProvider:nil];
+}
+
+- (id)initWithName:(NSString *)name currentVersionProvider:(VersionProviderBlock)currentVersionProviderBlock
+{
 	self = [super init];
 	if (self)
 	{
+		_currentVersionProviderBlock = currentVersionProviderBlock;
+		
 		_initialVersionKey = name ? [MFMigrationManagerInitialVersionKey stringByAppendingFormat:@"-%@", name] : MFMigrationManagerInitialVersionKey;
 		_lastVersionKey = name ? [MFMigrationManagerLastVersionKey stringByAppendingFormat:@"-%@", name] : MFMigrationManagerLastVersionKey;
 		
 		[self storeInitialVersion];
 	}
 	return self;
-}
-
-- (id)init
-{
-	return [self initWithName:nil];
 }
 
 #pragma mark Public Methods
@@ -158,7 +172,14 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 
 - (NSString *)appVersion
 {
-    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+	if (_currentVersionProviderBlock)
+	{
+		return _currentVersionProviderBlock();
+	}
+	else
+	{
+		return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+	}
 }
 
 @end

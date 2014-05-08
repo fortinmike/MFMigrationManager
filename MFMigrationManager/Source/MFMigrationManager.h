@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NSString *(^VersionProviderBlock)();
+
 @class MFMigrationManager;
 
 @protocol MFMigrationManagerDelegate <NSObject>
@@ -24,7 +26,11 @@
 
 + (instancetype)migrationManager;
 + (instancetype)migrationManagerWithName:(NSString *)name;
++ (instancetype)migrationManagerWithName:(NSString *)name currentVersionProvider:(VersionProviderBlock)currentVersionProviderBlock;
+
+- (id)init;
 - (id)initWithName:(NSString *)name;
+- (id)initWithName:(NSString *)name currentVersionProvider:(VersionProviderBlock)currentVersionProviderBlock;
 
 #pragma mark Public Methods
 
