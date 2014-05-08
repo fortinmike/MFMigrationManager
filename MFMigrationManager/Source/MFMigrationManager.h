@@ -22,12 +22,13 @@
 
 #pragma mark Lifetime
 
++ (instancetype)migrationManager;
 + (instancetype)migrationManagerWithName:(NSString *)name;
 - (id)initWithName:(NSString *)name;
 
 #pragma mark Public Methods
 
-- (void)migrateToVersion:(NSString *)version action:(void (^)())action;
+- (void)whenMigratingToVersion:(NSString *)version run:(void (^)())action;
 - (void)reset;
 
 @end

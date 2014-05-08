@@ -26,6 +26,11 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 
 #pragma mark Lifetime
 
++ (instancetype)migrationManager
+{
+	return [[self alloc] init];
+}
+
 + (instancetype)migrationManagerWithName:(NSString *)name
 {
 	return [[self alloc] initWithName:name];
@@ -36,8 +41,8 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 	self = [super init];
 	if (self)
 	{
-		_initialVersionKey = [MFMigrationManagerInitialVersionKey stringByAppendingFormat:@"-%@", name];
-		_lastVersionKey = [MFMigrationManagerLastVersionKey stringByAppendingFormat:@"-%@", name];
+		_initialVersionKey = name ? [MFMigrationManagerInitialVersionKey stringByAppendingFormat:@"-%@", name] : MFMigrationManagerInitialVersionKey;
+		_lastVersionKey = name ? [MFMigrationManagerLastVersionKey stringByAppendingFormat:@"-%@", name] : MFMigrationManagerLastVersionKey;
 		
 		[self storeInitialVersion];
 	}
@@ -51,7 +56,7 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 
 #pragma mark Public Methods
 
-- (void)migrateToVersion:(NSString *)version action:(void (^)())action
+- (void)whenMigratingToVersion:(NSString *)version run:(void (^)())action
 {
 	[self assertVersionMatchesRegex:version];
 	[self assertVersionSmallerThanAppVersion:version];

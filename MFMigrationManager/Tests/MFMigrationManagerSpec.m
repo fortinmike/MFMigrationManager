@@ -29,14 +29,14 @@ describe(@"MFMigrationManager", ^
 			[migrationManager stub:@selector(initialVersion) andReturn:@"1.0"];
 			[migrationManager stub:@selector(appVersion) andReturn:@"11.24"];
 			
-			[migrationManager migrateToVersion:@"1.0-0" action:^{}];
-			[migrationManager migrateToVersion:@"1.0.7-8" action:^{}];
-			[migrationManager migrateToVersion:@"1.0.12-8" action:^{}];
-			[migrationManager migrateToVersion:@"1.1-2" action:^{}];
-			[migrationManager migrateToVersion:@"1.1.2-1" action:^{}];
-			[migrationManager migrateToVersion:@"1.3.5.6" action:^{}];
-			[migrationManager migrateToVersion:@"1.5.2.7.1-1" action:^{}];
-			[migrationManager migrateToVersion:@"10.21.1-0" action:^{}];
+			[migrationManager whenMigratingToVersion:@"1.0-0" run:^{}];
+			[migrationManager whenMigratingToVersion:@"1.0.7-8" run:^{}];
+			[migrationManager whenMigratingToVersion:@"1.0.12-8" run:^{}];
+			[migrationManager whenMigratingToVersion:@"1.1-2" run:^{}];
+			[migrationManager whenMigratingToVersion:@"1.1.2-1" run:^{}];
+			[migrationManager whenMigratingToVersion:@"1.3.5.6" run:^{}];
+			[migrationManager whenMigratingToVersion:@"1.5.2.7.1-1" run:^{}];
+			[migrationManager whenMigratingToVersion:@"10.21.1-0" run:^{}];
 		});
 		
 		it(@"should migrate to zero sub-version", ^
@@ -45,7 +45,7 @@ describe(@"MFMigrationManager", ^
 			[migrationManager stub:@selector(appVersion) andReturn:@"1.0"];
 			
 			__block BOOL migrated = NO;
-			[migrationManager migrateToVersion:@"1.0-0" action:^{ migrated = YES; }];
+			[migrationManager whenMigratingToVersion:@"1.0-0" run:^{ migrated = YES; }];
 			[[theValue(migrated) should] beYes];
 		});
 		
@@ -55,22 +55,22 @@ describe(@"MFMigrationManager", ^
 			[migrationManager stub:@selector(appVersion) andReturn:@"1.1"];
 			
 			__block BOOL migrated1 = NO;
-			[migrationManager migrateToVersion:@"1.1-0" action:^{ migrated1 = YES; }];
+			[migrationManager whenMigratingToVersion:@"1.1-0" run:^{ migrated1 = YES; }];
 			[[theValue(migrated1) should] beYes];
 			
 			__block BOOL migrated2 = NO;
-			[migrationManager migrateToVersion:@"1.1-2" action:^{ migrated2 = YES; }];
+			[migrationManager whenMigratingToVersion:@"1.1-2" run:^{ migrated2 = YES; }];
 			[[theValue(migrated2) should] beYes];
 		});
 		
 		it(@"should throw when adding migrations with invalid version strings", ^
 		{
-			[[theBlock(^{ [migrationManager migrateToVersion:@"1" action:^{}]; }) should] raise];
-			[[theBlock(^{ [migrationManager migrateToVersion:@"1b" action:^{}]; }) should] raise];
-			[[theBlock(^{ [migrationManager migrateToVersion:@"1.1a" action:^{}]; }) should] raise];
-			[[theBlock(^{ [migrationManager migrateToVersion:@"1.3.1rc1" action:^{}]; }) should] raise];
-			[[theBlock(^{ [migrationManager migrateToVersion:@"1.9.a" action:^{}]; }) should] raise];
-			[[theBlock(^{ [migrationManager migrateToVersion:@"1.0.123" action:^{}]; }) should] raise];
+			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1" run:^{}]; }) should] raise];
+			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1b" run:^{}]; }) should] raise];
+			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1.1a" run:^{}]; }) should] raise];
+			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1.3.1rc1" run:^{}]; }) should] raise];
+			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1.9.a" run:^{}]; }) should] raise];
+			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1.0.123" run:^{}]; }) should] raise];
 		});
 		
 		it(@"should run all migrations in the appropriate order given valid version strings", ^
@@ -84,11 +84,11 @@ describe(@"MFMigrationManager", ^
 			__block uint64_t migrationTime4 = 0;
 			__block uint64_t migrationTime5 = 0;
 			
-			[migrationManager migrateToVersion:@"1.1" action:^{ migrationTime1 = mach_absolute_time(); }];
-			[migrationManager migrateToVersion:@"1.1-1" action:^{ migrationTime2 = mach_absolute_time(); }];
-			[migrationManager migrateToVersion:@"1.2-8" action:^{ migrationTime3 = mach_absolute_time(); }];
-			[migrationManager migrateToVersion:@"1.3.0" action:^{ migrationTime4 = mach_absolute_time(); }];
-			[migrationManager migrateToVersion:@"1.4.0-1" action:^{ migrationTime5 = mach_absolute_time(); }];
+			[migrationManager whenMigratingToVersion:@"1.1" run:^{ migrationTime1 = mach_absolute_time(); }];
+			[migrationManager whenMigratingToVersion:@"1.1-1" run:^{ migrationTime2 = mach_absolute_time(); }];
+			[migrationManager whenMigratingToVersion:@"1.2-8" run:^{ migrationTime3 = mach_absolute_time(); }];
+			[migrationManager whenMigratingToVersion:@"1.3.0" run:^{ migrationTime4 = mach_absolute_time(); }];
+			[migrationManager whenMigratingToVersion:@"1.4.0-1" run:^{ migrationTime5 = mach_absolute_time(); }];
 			
 			[[theValue(migrationTime1) shouldNot] equal:theValue(0)];
 			[[theValue(migrationTime2) shouldNot] equal:theValue(0)];
@@ -109,19 +109,19 @@ describe(@"MFMigrationManager", ^
 			[migrationManager stub:@selector(appVersion) andReturn:@"1.3"];
 			
 			__block BOOL ranEarlierVersionMigration = NO;
-			[migrationManager migrateToVersion:@"1.1" action:^{ ranEarlierVersionMigration = YES; }];
+			[migrationManager whenMigratingToVersion:@"1.1" run:^{ ranEarlierVersionMigration = YES; }];
 			[[theValue(ranEarlierVersionMigration) should] beNo];
 			
 			__block BOOL ranInitialVersionMigration = NO;
-			[migrationManager migrateToVersion:@"1.2" action:^{ ranInitialVersionMigration = YES; }];
+			[migrationManager whenMigratingToVersion:@"1.2" run:^{ ranInitialVersionMigration = YES; }];
 			[[theValue(ranInitialVersionMigration) should] beNo];
 			
 			__block BOOL ranLaterVersionMigration1 = NO;
-			[migrationManager migrateToVersion:@"1.2-1" action:^{ ranLaterVersionMigration1 = YES; }];
+			[migrationManager whenMigratingToVersion:@"1.2-1" run:^{ ranLaterVersionMigration1 = YES; }];
 			[[theValue(ranLaterVersionMigration1) should] beYes];
 			
 			__block BOOL ranLaterVersionMigration2 = NO;
-			[migrationManager migrateToVersion:@"1.3" action:^{ ranLaterVersionMigration2 = YES; }];
+			[migrationManager whenMigratingToVersion:@"1.3" run:^{ ranLaterVersionMigration2 = YES; }];
 			[[theValue(ranLaterVersionMigration2) should] beYes];
 		});
 		
@@ -131,7 +131,7 @@ describe(@"MFMigrationManager", ^
 			[migrationManager stub:@selector(initialVersion) andReturn:@"1.2"];
 			[migrationManager stub:@selector(appVersion) andReturn:@"1.3"];
 			
-			[[theBlock(^{ [migrationManager migrateToVersion:@"1.8" action:^{}]; }) should] raise];
+			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1.8" run:^{}]; }) should] raise];
 		});
 		
 		it(@"should throw when defining migrations in the wrong version order", ^
@@ -139,10 +139,10 @@ describe(@"MFMigrationManager", ^
 			[migrationManager stub:@selector(initialVersion) andReturn:@"1.0"];
 			[migrationManager stub:@selector(appVersion) andReturn:@"1.2"];
 			
-			[migrationManager migrateToVersion:@"1.0-1" action:^{}];
-			[migrationManager migrateToVersion:@"1.1" action:^{}];
-			[migrationManager migrateToVersion:@"1.2" action:^{}];
-			[[theBlock(^{ [migrationManager migrateToVersion:@"1.1.1" action:^{}]; }) should] raise];
+			[migrationManager whenMigratingToVersion:@"1.0-1" run:^{}];
+			[migrationManager whenMigratingToVersion:@"1.1" run:^{}];
+			[migrationManager whenMigratingToVersion:@"1.2" run:^{}];
+			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1.1.1" run:^{}]; }) should] raise];
 		});
 	});
 });
