@@ -124,7 +124,7 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 {
 	if ([self isVersionGreaterThanAppVersion:version])
 	{
-		NSString *reason = [NSString stringWithFormat:@"Cannot run migration for a version (%@) that is bigger than the current app version", version];
+		NSString *reason = [NSString stringWithFormat:@"Cannot run migration for a version (%@) that is bigger than the current app version (%@)", version, [self appVersion]];
 		@throw [NSException exceptionWithName:@"Migration Exception" reason:reason userInfo:nil];
 	}
 }
