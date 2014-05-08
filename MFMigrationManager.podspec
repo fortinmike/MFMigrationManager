@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "MFMigrationManager"
   s.version          = "1.0.0"
-  s.summary          = "Your regex helper. Makes working with regular expressions in Objective-C short, sweet and performant."
+  s.summary          = "A great way to handle migrations in your iOS or Mac app."
   s.homepage         = "http://github.com/fortinmike/MFMigrationManager"
   s.license          = 'MIT'
   s.author           = { "Michaël Fortin" => "fortinmike@irradiated.net" }
