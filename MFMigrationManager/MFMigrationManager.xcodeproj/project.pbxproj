@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		206826C7ABEE471EA0932124 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
 		4C5BB18319145D25009CB21B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
 		4C5BB19319145D25009CB21B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59966C19145A4900EFA82C /* XCTest.framework */; };
 		4C5BB19419145D25009CB21B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
@@ -24,6 +23,8 @@
 		4CC18D3419145C6400CEECEC /* MFMigrationManager.iOS.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC18D2319145C6400CEECEC /* MFMigrationManager.iOS.dylib */; };
 		4CC18D4719145C9B00CEECEC /* MFMigrationManager-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 4CC18D4419145C9B00CEECEC /* MFMigrationManager-Prefix.pch */; };
 		4CECFCF319145E540022AA2A /* MFMigrationManager-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 4CC18D4419145C9B00CEECEC /* MFMigrationManager-Prefix.pch */; };
+		77A5CEDC863C43E087A7947A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
+		AE4B39FA553B48B2B35A0F47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
 		B9DC419F83E042C98E4F6929 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
 		D88E53385B1641678E62DA0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5BB18319145D25009CB21B /* Cocoa.framework in Frameworks */,
+				AE4B39FA553B48B2B35A0F47 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CC18D2419145C6400CEECEC /* Cocoa.framework in Frameworks */,
-				206826C7ABEE471EA0932124 /* libPods.a in Frameworks */,
+				77A5CEDC863C43E087A7947A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,10 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C5BB1A019145D25009CB21B /* Build configuration list for PBXNativeTarget "MFMigrationManager.Mac" */;
 			buildPhases = (
+				02C4FFE30FCA40E4AE427546 /* Check Pods Manifest.lock */,
 				4C5BB17D19145D24009CB21B /* Sources */,
 				4C5BB17E19145D24009CB21B /* Frameworks */,
 				4C5BB17F19145D24009CB21B /* Headers */,
 				4C5BB18019145D24009CB21B /* Resources */,
+				5936817F68EB443FA4F105D0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,11 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CC18D3D19145C6400CEECEC /* Build configuration list for PBXNativeTarget "MFMigrationManager.iOS" */;
 			buildPhases = (
-				D270762D08DD444C85CD72C1 /* Check Pods Manifest.lock */,
+				F40A7A054D0C4CA48AF77CF5 /* Check Pods Manifest.lock */,
 				4CC18D1F19145C6400CEECEC /* Sources */,
 				4CC18D2019145C6400CEECEC /* Frameworks */,
 				4CC18D2119145C6400CEECEC /* Headers */,
-				88D68D7BBF604AA9A2524948 /* Copy Pods Resources */,
+				0C2DEE17C7AC48A180A512ED /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -334,6 +338,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02C4FFE30FCA40E4AE427546 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0C2DEE17C7AC48A180A512ED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2831C023833445B6945D7BE8 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,7 +383,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7A6F756BB7B944A1B8680F7E /* Copy Pods Resources */ = {
+		5936817F68EB443FA4F105D0 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -364,7 +398,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		88D68D7BBF604AA9A2524948 /* Copy Pods Resources */ = {
+		7A6F756BB7B944A1B8680F7E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -409,7 +443,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D270762D08DD444C85CD72C1 /* Check Pods Manifest.lock */ = {
+		F40A7A054D0C4CA48AF77CF5 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -549,6 +583,7 @@
 		};
 		4C5BB1A119145D25009CB21B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -568,6 +603,7 @@
 		};
 		4C5BB1A219145D25009CB21B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
