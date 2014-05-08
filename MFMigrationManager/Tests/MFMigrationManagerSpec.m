@@ -155,9 +155,13 @@ describe(@"MFMigrationManager", ^
 			__block BOOL migration4Ran;
 			
 			MFMigrationManager *manager1 = [MFMigrationManager migrationManagerWithName:@"Manager1"];
+			[manager1 stub:@selector(initialVersion) andReturn:@"1.0"];
+			[manager1 stub:@selector(appVersion) andReturn:@"1.2"];
 			[manager1 performSelector:@selector(setLastMigrationVersion:) withObject:nil];
 			
 			MFMigrationManager *manager2 = [MFMigrationManager migrationManagerWithName:@"Manager2"];
+			[manager2 stub:@selector(initialVersion) andReturn:@"1.0"];
+			[manager2 stub:@selector(appVersion) andReturn:@"1.2"];
 			[manager2 performSelector:@selector(setLastMigrationVersion:) withObject:nil];
 			
 			[manager1 whenMigratingToVersion:@"1.1" run:^{ migration1Ran = YES; }];
