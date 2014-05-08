@@ -175,6 +175,29 @@ describe(@"MFMigrationManager", ^
 			[[theValue(migration4Ran) should] beYes];
 		});
 	});
+	
+	context(@"specifying current version externally", ^
+	{
+		it(@"should perform upgrades when provided with a version number encompassing some migrations", ^
+		{
+			MFMigrationManager *manager = [MFMigrationManager migrationManagerWithName:[[NSUUID UUID] UUIDString] currentVersionProvider:^NSString *{ return @"1.1"; }];
+			[manager stub:@selector(initialVersion) andReturn:@"1.0"];
+			
+			__block BOOL migrationRan;
+			
+			[manager whenMigratingToVersion:@"1.1" run:^{ migrationRan = YES; }];
+			
+			[[theValue(migrationRan) should] beYes];
+		});
+		
+		it(@"should raise when provided with a version number that is lower than at least one of the migrations", ^
+		{
+			MFMigrationManager *manager = [MFMigrationManager migrationManagerWithName:[[NSUUID UUID] UUIDString] currentVersionProvider:^NSString *{ return @"1.0"; }];
+			[manager stub:@selector(initialVersion) andReturn:@"1.0"];
+			
+			[[theBlock(^{ [manager whenMigratingToVersion:@"1.1" run:^{}]; }) should] raise];
+		});
+	});
 });
 
 SPEC_END
