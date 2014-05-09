@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MFMigrationManager"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "A great way to handle migrations in your iOS or Mac app."
   s.homepage         = "http://github.com/fortinmike/MFMigrationManager"
   s.license          = 'MIT'
