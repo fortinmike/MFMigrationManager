@@ -9,7 +9,6 @@
 //
 
 #import "MFMigrationManager.h"
-#import "NSString+Regexer.h"
 
 @implementation MFMigrationManager
 {
@@ -123,7 +122,10 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 
 - (void)assertVersionMatchesRegex:(NSString *)version
 {
-	if (!version || ![version rx_matchesPattern:MFMigrationManagerVersionRegexString])
+	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:MFMigrationManagerVersionRegexString options:0 error:0];
+	BOOL versionIsValid = ([regex numberOfMatchesInString:version options:0 range:NSMakeRange(0, [version length])] == 1);
+	
+	if (!version || !versionIsValid)
 	{
 		NSString *reason = [NSString stringWithFormat:@"Invalid version string \"%@\", see regex and spec for appropriate version format", version];
 		@throw [NSException exceptionWithName:@"Migration Exception" reason:reason userInfo:nil];

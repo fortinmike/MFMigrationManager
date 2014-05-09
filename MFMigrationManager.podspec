@@ -14,6 +14,4 @@ Pod::Spec.new do |s|
 
   s.source_files = 'MFMigrationManager/Source'
   s.public_header_files = 'MFMigrationManager/Source/**/*.h'
-  
-  s.dependency 'Regexer', '~> 1.0.0'
 end
