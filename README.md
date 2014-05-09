@@ -49,7 +49,7 @@ This code should run each time your app launches so that the migration manager c
 
 #### Behavior
 
-- Runs actions (if appropriate) as soon as -whenMigratingToVersion:run: is called.
+- Runs actions (if appropriate) as soon as `-whenMigratingToVersion:run:` is called.
 - Runs all migrations from the version of the last app launch to the current version.
 - Considers the current version to be the version defined in the info plist (CFBundleShortVersionString) unless [specified manually](#manual-current-version).
 

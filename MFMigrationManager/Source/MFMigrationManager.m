@@ -5,7 +5,7 @@
 //  Created by Michaël Fortin on 10/21/2013.
 //  Copyright (c) 2013 Michaël Fortin. All rights reserved.
 //
-//  Note: Inspired by https://github.com/mysterioustrousers/MTMigration
+//  Inspired by https://github.com/mysterioustrousers/MTMigration
 //
 
 #import "MFMigrationManager.h"
