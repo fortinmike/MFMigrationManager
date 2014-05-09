@@ -26,11 +26,13 @@ typedef NSString *(^VersionProviderBlock)();
 
 + (instancetype)migrationManager;
 + (instancetype)migrationManagerWithName:(NSString *)name;
-+ (instancetype)migrationManagerWithName:(NSString *)name currentVersionProvider:(VersionProviderBlock)currentVersionProviderBlock;
++ (instancetype)migrationManagerWithCurrentVersion:(NSString *)currentVersion;
++ (instancetype)migrationManagerWithName:(NSString *)name currentVersion:(NSString *)currentVersion;
 
 - (id)init;
 - (id)initWithName:(NSString *)name;
-- (id)initWithName:(NSString *)name currentVersionProvider:(VersionProviderBlock)currentVersionProviderBlock;
+- (id)initWithCurrentVersion:(NSString *)currentVersion;
+- (id)initWithName:(NSString *)name currentVersion:(NSString *)currentVersion;
 
 #pragma mark Public Methods
 

@@ -13,7 +13,7 @@
 
 @implementation MFMigrationManager
 {
-	VersionProviderBlock _currentVersionProviderBlock;
+	NSString *_currentVersion;
 	
 	NSString *_initialVersionKey;
 	NSString *_lastVersionKey;
@@ -35,12 +35,17 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 
 + (instancetype)migrationManagerWithName:(NSString *)name
 {
-	return [[self alloc] initWithName:name currentVersionProvider:nil];
+	return [[self alloc] initWithName:name currentVersion:nil];
 }
 
-+ (instancetype)migrationManagerWithName:(NSString *)name currentVersionProvider:(VersionProviderBlock)currentVersionProviderBlock
++ (instancetype)migrationManagerWithCurrentVersion:(NSString *)currentVersion
 {
-	return [[self alloc] initWithName:name currentVersionProvider:currentVersionProviderBlock];
+	return [[self alloc] initWithName:nil currentVersion:currentVersion];
+}
+
++ (instancetype)migrationManagerWithName:(NSString *)name currentVersion:(NSString *)currentVersion;
+{
+	return [[self alloc] initWithName:name currentVersion:currentVersion];
 }
 
 - (id)init
@@ -50,15 +55,20 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 
 - (id)initWithName:(NSString *)name
 {
-	return [self initWithName:name currentVersionProvider:nil];
+	return [self initWithName:name currentVersion:nil];
 }
 
-- (id)initWithName:(NSString *)name currentVersionProvider:(VersionProviderBlock)currentVersionProviderBlock
+- (id)initWithCurrentVersion:(NSString *)currentVersion
+{
+	return [self initWithName:nil currentVersion:currentVersion];
+}
+
+- (id)initWithName:(NSString *)name currentVersion:(NSString *)currentVersion
 {
 	self = [super init];
 	if (self)
 	{
-		_currentVersionProviderBlock = currentVersionProviderBlock;
+		_currentVersion = currentVersion ?: [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 		
 		_initialVersionKey = name ? [MFMigrationManagerInitialVersionKey stringByAppendingFormat:@"-%@", name] : MFMigrationManagerInitialVersionKey;
 		_lastVersionKey = name ? [MFMigrationManagerLastVersionKey stringByAppendingFormat:@"-%@", name] : MFMigrationManagerLastVersionKey;
@@ -73,7 +83,7 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 - (void)whenMigratingToVersion:(NSString *)version run:(void (^)())action
 {
 	[self assertVersionMatchesRegex:version];
-	[self assertVersionSmallerThanAppVersion:version];
+	[self assertVersionSmallerThanCurrentVersion:version];
 	[self assertVersionOrderIsValid:version];
 	
 	if ([self shouldMigrateToVersion:version])
@@ -97,7 +107,7 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 - (void)storeInitialVersion
 {
 	if ([[self initialVersion] isEqualToString:@""])
-		[self setInitialVersion:[self appVersion]];
+		[self setInitialVersion:[self currentVersion]];
 }
 
 - (void)assertVersionOrderIsValid:(NSString *)version
@@ -120,11 +130,11 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 	}
 }
 
-- (void)assertVersionSmallerThanAppVersion:(NSString *)version
+- (void)assertVersionSmallerThanCurrentVersion:(NSString *)version
 {
-	if ([self isVersionGreaterThanAppVersion:version])
+	if ([self isVersionGreaterThanCurrentVersion:version])
 	{
-		NSString *reason = [NSString stringWithFormat:@"Cannot run migration for a version (%@) that is bigger than the current app version (%@)", version, [self appVersion]];
+		NSString *reason = [NSString stringWithFormat:@"Cannot run migration for a version (%@) that is bigger than the current app version (%@)", version, [self currentVersion]];
 		@throw [NSException exceptionWithName:@"Migration Exception" reason:reason userInfo:nil];
 	}
 }
@@ -135,10 +145,10 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 		   [self isVersion:version greaterThan:[self lastMigrationVersion]];
 }
 
-- (BOOL)isVersionGreaterThanAppVersion:(NSString *)version
+- (BOOL)isVersionGreaterThanCurrentVersion:(NSString *)version
 {
 	NSString *versionWithoutSubVersion = [version componentsSeparatedByString:@"-"][0];
-	return [self isVersion:versionWithoutSubVersion greaterThan:[self appVersion]];
+	return [self isVersion:versionWithoutSubVersion greaterThan:[self currentVersion]];
 }
 
 - (BOOL)isVersion:(NSString *)version1 greaterThan:(NSString *)version2
@@ -170,16 +180,10 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 
 #pragma mark Helper Methods
 
-- (NSString *)appVersion
+// This method exists for stubbing in tests
+- (NSString *)currentVersion
 {
-	if (_currentVersionProviderBlock)
-	{
-		return _currentVersionProviderBlock();
-	}
-	else
-	{
-		return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-	}
+	return _currentVersion;
 }
 
 @end
