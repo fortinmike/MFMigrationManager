@@ -51,7 +51,7 @@ This code should run each time your app launches so that the migration manager c
 
 - Runs actions (if appropriate) as soon as -whenMigratingToVersion:run: is called.
 - Runs all migrations from the version of the last app launch to the current version.
-- Considers the current version to be the version defined in the info plist (CFBundleShortVersionString) unless specified through a [current version provider](#current-version-provider).
+- Considers the current version to be the version defined in the info plist (CFBundleShortVersionString) unless [specified manually](#manual-current-version).
 
 As an example, given the migrations above, if the last version of the app that the user launched was version `1.1` and the user is now launching version `1.4`, then `MFMigrationManager` would run migrations `1.2.5` and `1.4`. Migration `1.1` would not run at that moment because it would already have been run when the app was launched as version `1.1`.
 
@@ -79,6 +79,7 @@ Sometimes it can be useful to run migrations without changing your app's version
 
 When encountering sub-migrations, `MFMigrationManager` runs all sub-migrations that it hasn't encountered yet for versions earlier than or equal to the current app version. In the example above, if the app version is `1.1`, then all three migrations would run. Adding another migration with version `1.1-3` then starting the app again would run that migration, but not the other migrations because they have already been run.
 
+<a name="manual-current-version"></a>
 #### Using Multiple Migration Managers
 
 If you'd rather use multiple migration managers to handle migrations in your app, you must obtain named migration managers. It could be a good idea to use the name of the class in which you're performing the migration as the migration manager's name, but that's up to you.
