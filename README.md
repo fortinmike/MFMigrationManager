@@ -8,16 +8,16 @@ A great way to handle migrations in your iOS or Mac app. Provides a simple API t
 ## Features
 
 - Define what needs to be run to migrate your app to specific versions in a declarative manner.
-- Sub-migrations enable running additional migrations without changing your app version number.
+- Sub-migrations enable you to run additional migrations without changing your app's version number.
 - Use multiple migration managers to migrate parts of your app independently (optional).
 
 ## Usage
 
-MFMigrationManager requires version numbers to be specified in a style similar to [Semantic Versioning](http://semver.org) (ex: `2.0.3`) but places no limit on the actual number of components in the version number (`2.0.3.9.6` would be a valid version number). MFMigrationManager also has its own syntax to refer to version numbers when it comes to sub-migrations (see below).
+`MFMigrationManager` requires version numbers to be specified in a style similar to [Semantic Versioning](http://semver.org) (ex: `2.0.3`) but places no limit on the actual number of components in the version number (`2.0.3.9.6` would be a valid version number). `MFMigrationManager` also has its own syntax to refer to version numbers when it comes to sub-migrations (see below).
 
 #### Basics
 
-Using MFMigrationManager is a piece of cake. First, obtain a migration manager instance:
+Using `MFMigrationManager` is a piece of cake. First, obtain a migration manager instance:
 
 ```objc
 MFMigrationManager *manager = [MFMigrationManager migrationManager];
@@ -45,12 +45,15 @@ Then, specify code to run when migrating your app to specific versions:
 }];
 ```
 
+This code should run each time your app launches so that the migration manager can do its job.
+
 #### Behavior
 
 - Runs actions (if appropriate) as soon as -whenMigratingToVersion:run: is called.
 - Runs all migrations from the version of the last app launch to the current version.
+- Considers the current version to be the version defined in the info plist (CFBundleShortVersionString) unless specified through a [current version provider](#current-version-provider).
 
-As an example, given the migrations above, if the last version of the app that the user launched was version `1.1` and the user is now launching version `1.4`, then MFMigrationManager would run migrations `1.2.5` and `1.4`. Migration `1.1` would not run at that moment because it would already have been run when the app was launched as version `1.1`.
+As an example, given the migrations above, if the last version of the app that the user launched was version `1.1` and the user is now launching version `1.4`, then `MFMigrationManager` would run migrations `1.2.5` and `1.4`. Migration `1.1` would not run at that moment because it would already have been run when the app was launched as version `1.1`.
 
 #### Sub-Migrations
 
@@ -74,7 +77,7 @@ Sometimes it can be useful to run migrations without changing your app's version
 }];
 ```
 
-When encountering sub-migrations, MFMigrationManager runs all sub-migrations that it hasn't encountered yet for versions earlier than or equal to the current app version. In the example above, if the app version is `1.1`, then all three migrations would run. Adding another migration with version `1.1-3` then starting the app again would run that migration, but not the other migrations because they have already been run.
+When encountering sub-migrations, `MFMigrationManager` runs all sub-migrations that it hasn't encountered yet for versions earlier than or equal to the current app version. In the example above, if the app version is `1.1`, then all three migrations would run. Adding another migration with version `1.1-3` then starting the app again would run that migration, but not the other migrations because they have already been run.
 
 #### Using Multiple Migration Managers
 
@@ -87,9 +90,12 @@ MFMigrationManager *manager = [MFMigrationManager migrationManagerWithName:class
 
 Afterwards, you can use your named migration managers totally independently. Define migrations for different version numbers, run blocks of code that affect different aspects of your app entirely, etc.
 
-## Behavior
+#### Providing the Current Version Manually
 
-- 
+If `MFMigrationManager`'s default behavior where CFBundleShortVersionString is considered as the current version doesn't fit your needs, you can also provide the current version manually:
+
+	NSString *version = [self obtainCurrentVersionNumberInSomeWay];
+	MFMigrationManager *manager = [MFMigrationManager migrationManagerWithCurrentVersion:version];
 
 ## Installation
 
