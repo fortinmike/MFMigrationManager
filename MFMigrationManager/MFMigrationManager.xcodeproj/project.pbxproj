@@ -56,6 +56,7 @@
 		4C59966C19145A4900EFA82C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4C5BB18219145D24009CB21B /* MFMigrationManager.Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MFMigrationManager.Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5BB19219145D25009CB21B /* MFMigrationManager.Mac.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFMigrationManager.Mac.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C6128DD192AA4A400FD380B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		4CBD7F4B191A02E0006B83E8 /* MFMigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFMigrationManager.h; sourceTree = "<group>"; };
 		4CBD7F4C191A02E0006B83E8 /* MFMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMigrationManager.m; sourceTree = "<group>"; };
 		4CBD7F51191A0EEA006B83E8 /* MFMigrationManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMigrationManagerSpec.m; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		4CC252DB191C1E5D00E49DF7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C6128DD192AA4A400FD380B /* CHANGELOG.md */,
 				4CC18D4419145C9B00CEECEC /* MFMigrationManager-Prefix.pch */,
 				4CC18D4519145C9B00CEECEC /* MFMigrationManager.Mac-Info.plist */,
 				4CC252DC191C1E7300E49DF7 /* MFMigrationManager.podspec */,
