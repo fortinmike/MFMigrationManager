@@ -68,6 +68,21 @@ describe(@"MFMigrationManager", ^
 			[[theValue(migrated2) should] beYes];
 		});
 		
+		
+		it(@"should not run migrations to sub-versions of the previous app version", ^
+		{
+			[migrationManager setLastMigrationVersion:@"1.2"];
+			[migrationManager stub:@selector(currentVersion) andReturn:@"1.2.1"];
+			
+			__block BOOL migrated1 = NO;
+			[migrationManager whenMigratingToVersion:@"1.1-1" run:^{ migrated1 = YES; }];
+			[[theValue(migrated1) should] beNo];
+			
+			__block BOOL migrated2 = NO;
+			[migrationManager whenMigratingToVersion:@"1.2.1" run:^{ migrated2 = YES; }];
+			[[theValue(migrated2) should] beYes];
+		});
+		
 		it(@"should throw when adding migrations with invalid version strings", ^
 		{
 			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1" run:^{}]; }) should] raise];
