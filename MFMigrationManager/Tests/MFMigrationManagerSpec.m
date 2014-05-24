@@ -31,7 +31,7 @@ describe(@"MFMigrationManager", ^
 		
 		it(@"should accept migrations with valid version strings", ^
 		{
-			[migrationManager stub:@selector(initialVersion) andReturn:@"1.0"];
+			[migrationManager setLastMigrationVersion:@"1.0"];
 			[migrationManager stub:@selector(currentVersion) andReturn:@"11.24"];
 			
 			[migrationManager whenMigratingToVersion:@"1.0-0" run:^{}];
@@ -46,7 +46,7 @@ describe(@"MFMigrationManager", ^
 		
 		it(@"should migrate to zero sub-version", ^
 		{
-			[migrationManager stub:@selector(initialVersion) andReturn:@"1.0"];
+			[migrationManager setLastMigrationVersion:@"1.0"];
 			[migrationManager stub:@selector(currentVersion) andReturn:@"1.0"];
 			
 			__block BOOL migrated = NO;
@@ -56,7 +56,7 @@ describe(@"MFMigrationManager", ^
 		
 		it(@"should be able to migrate to sub-versions of the current app version", ^
 		{
-			[migrationManager stub:@selector(initialVersion) andReturn:@"1.0"];
+			[migrationManager setLastMigrationVersion:@"1.0"];
 			[migrationManager stub:@selector(currentVersion) andReturn:@"1.1"];
 			
 			__block BOOL migrated1 = NO;
@@ -80,7 +80,7 @@ describe(@"MFMigrationManager", ^
 		
 		it(@"should run all migrations in the appropriate order given valid version strings", ^
 		{
-			[migrationManager stub:@selector(initialVersion) andReturn:@"1.0.5"];
+			[migrationManager setLastMigrationVersion:@"1.0.5"];
 			[migrationManager stub:@selector(currentVersion) andReturn:@"2.0"];
 			
 			__block uint64_t migrationTime1 = 0;
@@ -159,12 +159,12 @@ describe(@"MFMigrationManager", ^
 			__block BOOL migration4Ran;
 			
 			MFMigrationManager *manager1 = [MFMigrationManager migrationManagerWithName:@"Manager1"];
-			[manager1 stub:@selector(initialVersion) andReturn:@"1.0"];
+			[manager1 setLastMigrationVersion:@"1.0"];
 			[manager1 stub:@selector(currentVersion) andReturn:@"1.2"];
 			[manager1 performSelector:@selector(setLastMigrationVersion:) withObject:nil];
 			
 			MFMigrationManager *manager2 = [MFMigrationManager migrationManagerWithName:@"Manager2"];
-			[manager2 stub:@selector(initialVersion) andReturn:@"1.0"];
+			[manager2 setLastMigrationVersion:@"1.0"];
 			[manager2 stub:@selector(currentVersion) andReturn:@"1.2"];
 			[manager2 performSelector:@selector(setLastMigrationVersion:) withObject:nil];
 			
@@ -185,7 +185,7 @@ describe(@"MFMigrationManager", ^
 		it(@"should perform upgrades when provided with a version number encompassing some migrations", ^
 		{
 			MFMigrationManager *manager = [MFMigrationManager migrationManagerWithName:[[NSUUID UUID] UUIDString] currentVersion:@"1.1"];
-			[manager stub:@selector(initialVersion) andReturn:@"1.0"];
+			[manager setLastMigrationVersion:@"1.0"];
 			
 			__block BOOL migrationRan;
 			
@@ -197,7 +197,7 @@ describe(@"MFMigrationManager", ^
 		it(@"should raise when provided with a version number that is lower than at least one of the migrations", ^
 		{
 			MFMigrationManager *manager = [MFMigrationManager migrationManagerWithName:[[NSUUID UUID] UUIDString] currentVersion:@"1.0"];
-			[manager stub:@selector(initialVersion) andReturn:@"1.0"];
+			[manager setLastMigrationVersion:@"1.0"];
 			
 			[[theBlock(^{ [manager whenMigratingToVersion:@"1.1" run:^{}]; }) should] raise];
 		});
