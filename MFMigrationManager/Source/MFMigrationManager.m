@@ -20,7 +20,6 @@
 	NSString *_previousVersion;
 }
 
-static NSString *MFMigrationManagerInitialVersionKey = @"MFMigrationManagerInitialVersionKey";
 static NSString *MFMigrationManagerLastVersionKey = @"MFMigrationManagerLastVersionKey";
 
 static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]{1,2}(-[0-9]{1,2})?$";
@@ -68,8 +67,6 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 	if (self)
 	{
 		_currentVersion = currentVersion ?: [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-		
-		_initialVersionKey = name ? [MFMigrationManagerInitialVersionKey stringByAppendingFormat:@"-%@", name] : MFMigrationManagerInitialVersionKey;
 		_lastVersionKey = name ? [MFMigrationManagerLastVersionKey stringByAppendingFormat:@"-%@", name] : MFMigrationManagerLastVersionKey;
 		
 		[self storeInitialVersion];
@@ -105,8 +102,8 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 
 - (void)storeInitialVersion
 {
-	if ([[self initialVersion] isEqualToString:@""])
-		[self setInitialVersion:[self currentVersion]];
+	if ([[self lastMigrationVersion] isEqualToString:@""])
+		[self setLastMigrationVersion:[self currentVersion]];
 }
 
 - (void)assertVersionOrderIsValid:(NSString *)version
@@ -143,8 +140,7 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 
 - (BOOL)shouldMigrateToVersion:(NSString *)version
 {
-	return [self isVersion:version greaterThan:[self initialVersion]] &&
-		   [self isVersion:version greaterThan:[self lastMigrationVersion]];
+	return [self isVersion:version greaterThan:[self lastMigrationVersion]];
 }
 
 - (BOOL)isVersionGreaterThanCurrentVersion:(NSString *)version
@@ -166,17 +162,6 @@ static NSString *MFMigrationManagerVersionRegexString = @"^([0-9]{1,2}\\.)+[0-9]
 - (void)setLastMigrationVersion:(NSString *)version
 {
 	[[NSUserDefaults standardUserDefaults] setValue:version forKey:_lastVersionKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (NSString *)initialVersion
-{
-	return [[NSUserDefaults standardUserDefaults] valueForKey:_initialVersionKey] ?: @"";
-}
-
-- (void)setInitialVersion:(NSString *)version
-{
-    [[NSUserDefaults standardUserDefaults] setValue:version forKey:_initialVersionKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

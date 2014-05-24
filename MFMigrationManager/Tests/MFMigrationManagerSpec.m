@@ -10,6 +10,12 @@
 #import <mach/mach_time.h>
 #import "MFMigrationManager.h"
 
+@interface MFMigrationManager (TestAdditions)
+
+- (void)setLastMigrationVersion:(NSString *)version;
+
+@end
+
 SPEC_BEGIN(MFMigrationManagerSpec)
 
 describe(@"MFMigrationManager", ^
@@ -103,8 +109,7 @@ describe(@"MFMigrationManager", ^
 		
 		it(@"should not run migrations whose version is smaller or equal to the initial version ran", ^
 		{
-			// Stub various methods to obtain the internal state that we want to test with
-			[migrationManager stub:@selector(initialVersion) andReturn:@"1.2"];
+			[migrationManager setLastMigrationVersion:@"1.2"];
 			[migrationManager stub:@selector(currentVersion) andReturn:@"1.3"];
 			
 			__block BOOL ranEarlierVersionMigration = NO;
@@ -126,8 +131,7 @@ describe(@"MFMigrationManager", ^
 		
 		it(@"should throw for migrations whose version is greater than the current app version", ^
 		{
-			// Stub various methods to obtain the internal state that we want to test with
-			[migrationManager stub:@selector(initialVersion) andReturn:@"1.2"];
+			[migrationManager setLastMigrationVersion:@"1.2"];
 			[migrationManager stub:@selector(currentVersion) andReturn:@"1.3"];
 			
 			[[theBlock(^{ [migrationManager whenMigratingToVersion:@"1.8" run:^{}]; }) should] raise];
@@ -135,7 +139,7 @@ describe(@"MFMigrationManager", ^
 		
 		it(@"should throw when defining migrations in the wrong version order", ^
 		{
-			[migrationManager stub:@selector(initialVersion) andReturn:@"1.0"];
+			[migrationManager setLastMigrationVersion:@"1.0"];
 			[migrationManager stub:@selector(currentVersion) andReturn:@"1.2"];
 			
 			[migrationManager whenMigratingToVersion:@"1.0-1" run:^{}];
