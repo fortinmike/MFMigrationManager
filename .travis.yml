@@ -2,4 +2,4 @@ language: objective-c
 before_install:
   - export LANG=en_US.UTF-8
   - gem install cocoapods -v '0.33.1'
-script: Scripts/travis-build.sh
+script: Scripts/travis-build.sh "MFMigrationManager"

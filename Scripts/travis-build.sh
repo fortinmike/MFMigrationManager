@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-cd MFMigrationManager
+cd "$1"
 
 pod install
 
-xctool -workspace MFMigrationManager.xcworkspace -scheme MFMigrationManager.iOS test
-xctool -workspace MFMigrationManager.xcworkspace -scheme MFMigrationManager.Mac test
+xctool -workspace "$1.xcworkspace" -scheme "$1.iOS" test
+xctool -workspace "$1.xcworkspace" -scheme "$1.Mac" test
