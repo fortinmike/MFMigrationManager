@@ -1,5 +1,11 @@
+# Coveralls code coverage uses Cocoanetics' script:
+# https://github.com/cocoanetics/ruby
+# http://www.cocoanetics.com/2013/10/xcode-coverage/
+
 language: objective-c
 before_install:
   - export LANG=en_US.UTF-8
   - gem install cocoapods --no-rdoc
+  - sudo easy_install cpp-coveralls
 script: Scripts/travis-build.sh "MFMigrationManager"
+after_success: Scripts/coveralls.rb --extension m --exclude-folder MFMigrationManager/Pods --exclude-folder MFMigrationManager/Tests
