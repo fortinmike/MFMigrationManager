@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4CC18D2219145C6400CEECEC"
-               BuildableName = "MFMigrationManager.iOS.dylib"
+               BlueprintIdentifier = "4C1FDE38193613D700ACA448"
+               BuildableName = "libMFMigrationManager.iOS.a"
                BlueprintName = "MFMigrationManager.iOS"
                ReferencedContainer = "container:MFMigrationManager.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4CC18D2E19145C6400CEECEC"
+               BlueprintIdentifier = "4C1FDE46193613D700ACA448"
                BuildableName = "MFMigrationManager.iOS.Tests.xctest"
                BlueprintName = "MFMigrationManager.iOS.Tests"
                ReferencedContainer = "container:MFMigrationManager.xcodeproj">

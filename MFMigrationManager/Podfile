@@ -1,4 +1,36 @@
-link_with 'MFMigrationManager.iOS', 'MFMigrationManager.iOS.Tests', 'MFMigrationManager.Mac', 'MFMigrationManager.Mac.Tests'
+inhibit_all_warnings!
 
-podspec :path => "../MFMigrationManager.podspec"
-pod 'Kiwi/XCTest', '~> 2.2.4'
+ios_version = '6.1'
+osx_version = '10.7'
+
+def library_pods
+	podspec :path => '../MFMigrationManager.podspec'
+end
+
+def test_pods
+  pod 'Kiwi/XCTest', '~> 2.2.4'
+end
+
+# Library / Framework Targets
+
+target "MFMigrationManager.iOS" do
+	platform :ios, ios_version
+	library_pods
+end
+
+target "MFMigrationManager.Mac" do
+	platform :osx, osx_version
+	library_pods
+end
+
+# Test Targets
+
+target "MFMigrationManager.iOS.Tests" do
+	platform :ios, ios_version
+	test_pods
+end
+
+target "MFMigrationManager.Mac.Tests" do
+	platform :osx, osx_version
+	test_pods
+end

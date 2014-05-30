@@ -7,29 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1FDE3B193613D700ACA448 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1FDE3A193613D700ACA448 /* Foundation.framework */; };
+		4C1FDE48193613D800ACA448 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59966C19145A4900EFA82C /* XCTest.framework */; };
+		4C1FDE49193613D800ACA448 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1FDE3A193613D700ACA448 /* Foundation.framework */; };
+		4C38666D19361EBE00BF98B6 /* libMFMigrationManager.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1FDE39193613D700ACA448 /* libMFMigrationManager.iOS.a */; };
+		4C3A440316AA4473B31ED874 /* libPods-MFMigrationManager.iOS.Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5982F2B4839549A98C81960B /* libPods-MFMigrationManager.iOS.Tests.a */; };
 		4C5BB18319145D25009CB21B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
 		4C5BB19319145D25009CB21B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59966C19145A4900EFA82C /* XCTest.framework */; };
 		4C5BB19419145D25009CB21B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
 		4C5BB19719145D25009CB21B /* MFMigrationManager.Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5BB18219145D24009CB21B /* MFMigrationManager.Mac.framework */; };
-		4CBD7F4D191A02E0006B83E8 /* MFMigrationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBD7F4B191A02E0006B83E8 /* MFMigrationManager.h */; };
-		4CBD7F4E191A02E0006B83E8 /* MFMigrationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBD7F4B191A02E0006B83E8 /* MFMigrationManager.h */; };
-		4CBD7F4F191A02E0006B83E8 /* MFMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD7F4C191A02E0006B83E8 /* MFMigrationManager.m */; };
-		4CBD7F50191A02E0006B83E8 /* MFMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD7F4C191A02E0006B83E8 /* MFMigrationManager.m */; };
-		4CBD7F52191A0EEA006B83E8 /* MFMigrationManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD7F51191A0EEA006B83E8 /* MFMigrationManagerSpec.m */; };
-		4CBD7F53191A0EEA006B83E8 /* MFMigrationManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD7F51191A0EEA006B83E8 /* MFMigrationManagerSpec.m */; };
-		4CC18D2419145C6400CEECEC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
-		4CC18D3019145C6400CEECEC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59966C19145A4900EFA82C /* XCTest.framework */; };
-		4CC18D3119145C6400CEECEC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C59965719145A4900EFA82C /* Cocoa.framework */; };
-		4CC18D3419145C6400CEECEC /* MFMigrationManager.iOS.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC18D2319145C6400CEECEC /* MFMigrationManager.iOS.dylib */; };
-		4CC18D4719145C9B00CEECEC /* MFMigrationManager-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 4CC18D4419145C9B00CEECEC /* MFMigrationManager-Prefix.pch */; };
+		4CA7F00519381F5400900ED5 /* MFMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7F00419381F5400900ED5 /* MFMigrationManager.m */; };
+		4CA7F00619381F5400900ED5 /* MFMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7F00419381F5400900ED5 /* MFMigrationManager.m */; };
+		4CA7F00819381F6700900ED5 /* MFMigrationManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7F00719381F6700900ED5 /* MFMigrationManagerSpec.m */; };
+		4CA7F00919381F6700900ED5 /* MFMigrationManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7F00719381F6700900ED5 /* MFMigrationManagerSpec.m */; };
+		4CDD635219232E7800936B49 /* MFMigrationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CDD635019232E7800936B49 /* MFMigrationManager.h */; };
 		4CECFCF319145E540022AA2A /* MFMigrationManager-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 4CC18D4419145C9B00CEECEC /* MFMigrationManager-Prefix.pch */; };
-		77A5CEDC863C43E087A7947A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
-		AE4B39FA553B48B2B35A0F47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
-		B9DC419F83E042C98E4F6929 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
-		D88E53385B1641678E62DA0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F08C97F96A34A0F8AE9D657 /* libPods.a */; };
+		E25B9D9BFD0647C2AE6E1778 /* libPods-MFMigrationManager.Mac.Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFAFBBF9E04145C7BFD9B526 /* libPods-MFMigrationManager.Mac.Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4C1FDE4C193613D800ACA448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C59964B19145A4900EFA82C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C1FDE38193613D700ACA448;
+			remoteInfo = MFMigrationManager.iOS;
+		};
 		4C5BB19519145D25009CB21B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C59964B19145A4900EFA82C /* Project object */;
@@ -37,18 +40,28 @@
 			remoteGlobalIDString = 4C5BB18119145D24009CB21B;
 			remoteInfo = MFMigrationManager.Mac;
 		};
-		4CC18D3219145C6400CEECEC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4C59964B19145A4900EFA82C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4CC18D2219145C6400CEECEC;
-			remoteInfo = MFMigrationManager.iOS;
-		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4C1FDE37193613D700ACA448 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		38990A9BF186483784019B54 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		216E091F7A5D4C3ABE585D87 /* Pods-MFMigrationManager.Mac.Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MFMigrationManager.Mac.Tests.xcconfig"; path = "Pods/Pods-MFMigrationManager.Mac.Tests.xcconfig"; sourceTree = "<group>"; };
 		3F08C97F96A34A0F8AE9D657 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C1FDE39193613D700ACA448 /* libMFMigrationManager.iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMFMigrationManager.iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C1FDE3A193613D700ACA448 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C1FDE47193613D800ACA448 /* MFMigrationManager.iOS.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFMigrationManager.iOS.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C1FDE4A193613D800ACA448 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4C1FDE661936162700ACA448 /* MFMigrationManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MFMigrationManager-Info.plist"; path = "Source/MFMigrationManager-Info.plist"; sourceTree = "<group>"; };
 		4C59965719145A4900EFA82C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4C59965A19145A4900EFA82C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C59965B19145A4900EFA82C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -56,26 +69,46 @@
 		4C59966C19145A4900EFA82C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4C5BB18219145D24009CB21B /* MFMigrationManager.Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MFMigrationManager.Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5BB19219145D25009CB21B /* MFMigrationManager.Mac.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFMigrationManager.Mac.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C6128DD192AA4A400FD380B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
-		4CBD7F4B191A02E0006B83E8 /* MFMigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFMigrationManager.h; sourceTree = "<group>"; };
-		4CBD7F4C191A02E0006B83E8 /* MFMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMigrationManager.m; sourceTree = "<group>"; };
-		4CBD7F51191A0EEA006B83E8 /* MFMigrationManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMigrationManagerSpec.m; sourceTree = "<group>"; };
-		4CC18D2319145C6400CEECEC /* MFMigrationManager.iOS.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = MFMigrationManager.iOS.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CC18D2F19145C6400CEECEC /* MFMigrationManager.iOS.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFMigrationManager.iOS.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C6128DE192AA53A00FD380B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		4CA7F00419381F5400900ED5 /* MFMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMigrationManager.m; sourceTree = "<group>"; };
+		4CA7F00719381F6700900ED5 /* MFMigrationManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMigrationManagerSpec.m; sourceTree = "<group>"; };
 		4CC18D4419145C9B00CEECEC /* MFMigrationManager-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MFMigrationManager-Prefix.pch"; path = "Source/MFMigrationManager-Prefix.pch"; sourceTree = "<group>"; };
-		4CC18D4519145C9B00CEECEC /* MFMigrationManager.Mac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MFMigrationManager.Mac-Info.plist"; path = "Source/MFMigrationManager.Mac-Info.plist"; sourceTree = "<group>"; };
-		4CC18D4A19145CA300CEECEC /* MFMigrationManagerTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MFMigrationManagerTests-Info.plist"; sourceTree = "<group>"; };
-		4CC252DC191C1E7300E49DF7 /* MFMigrationManager.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = MFMigrationManager.podspec; path = ../MFMigrationManager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4CC18D4A19145CA300CEECEC /* MFMigrationManagerTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MFMigrationManagerTests-Info.plist"; path = "Tests/MFMigrationManagerTests-Info.plist"; sourceTree = "<group>"; };
+		4CC252DC191C1E7300E49DF7 /* MFMigrationManager.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; lineEnding = 0; name = MFMigrationManager.podspec; path = ../MFMigrationManager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4CC252DD191C1E7300E49DF7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4CDD635019232E7800936B49 /* MFMigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MFMigrationManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5982F2B4839549A98C81960B /* libPods-MFMigrationManager.iOS.Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MFMigrationManager.iOS.Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68214E7B330146CF89371C6D /* libPods-MFMigrationManager.Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MFMigrationManager.Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		72A982300F69404B872EBE6C /* Pods-MFMigrationManager.iOS.Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MFMigrationManager.iOS.Tests.xcconfig"; path = "Pods/Pods-MFMigrationManager.iOS.Tests.xcconfig"; sourceTree = "<group>"; };
+		CFAFBBF9E04145C7BFD9B526 /* libPods-MFMigrationManager.Mac.Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MFMigrationManager.Mac.Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFBEEB8F4DED45ACB66C909A /* libPods-MFMigrationManager.iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MFMigrationManager.iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4C1FDE36193613D700ACA448 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C1FDE3B193613D700ACA448 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C1FDE44193613D700ACA448 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C38666D19361EBE00BF98B6 /* libMFMigrationManager.iOS.a in Frameworks */,
+				4C1FDE48193613D800ACA448 /* XCTest.framework in Frameworks */,
+				4C1FDE49193613D800ACA448 /* Foundation.framework in Frameworks */,
+				4C3A440316AA4473B31ED874 /* libPods-MFMigrationManager.iOS.Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C5BB17E19145D24009CB21B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4C5BB18319145D25009CB21B /* Cocoa.framework in Frameworks */,
-				AE4B39FA553B48B2B35A0F47 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,27 +119,7 @@
 				4C5BB19719145D25009CB21B /* MFMigrationManager.Mac.framework in Frameworks */,
 				4C5BB19419145D25009CB21B /* Cocoa.framework in Frameworks */,
 				4C5BB19319145D25009CB21B /* XCTest.framework in Frameworks */,
-				B9DC419F83E042C98E4F6929 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CC18D2019145C6400CEECEC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CC18D2419145C6400CEECEC /* Cocoa.framework in Frameworks */,
-				77A5CEDC863C43E087A7947A /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CC18D2C19145C6400CEECEC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CC18D3119145C6400CEECEC /* Cocoa.framework in Frameworks */,
-				4CC18D3419145C6400CEECEC /* MFMigrationManager.iOS.dylib in Frameworks */,
-				4CC18D3019145C6400CEECEC /* XCTest.framework in Frameworks */,
-				D88E53385B1641678E62DA0B /* libPods.a in Frameworks */,
+				E25B9D9BFD0647C2AE6E1778 /* libPods-MFMigrationManager.Mac.Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,17 +134,18 @@
 				4C59965619145A4900EFA82C /* Frameworks */,
 				4C59965519145A4900EFA82C /* Products */,
 				4CC252DB191C1E5D00E49DF7 /* Supporting Files */,
-				38990A9BF186483784019B54 /* Pods.xcconfig */,
+				216E091F7A5D4C3ABE585D87 /* Pods-MFMigrationManager.Mac.Tests.xcconfig */,
+				72A982300F69404B872EBE6C /* Pods-MFMigrationManager.iOS.Tests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
 		4C59965519145A4900EFA82C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4CC18D2319145C6400CEECEC /* MFMigrationManager.iOS.dylib */,
-				4CC18D2F19145C6400CEECEC /* MFMigrationManager.iOS.Tests.xctest */,
 				4C5BB18219145D24009CB21B /* MFMigrationManager.Mac.framework */,
 				4C5BB19219145D25009CB21B /* MFMigrationManager.Mac.Tests.xctest */,
+				4C1FDE39193613D700ACA448 /* libMFMigrationManager.iOS.a */,
+				4C1FDE47193613D800ACA448 /* MFMigrationManager.iOS.Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,8 +155,14 @@
 			children = (
 				4C59965719145A4900EFA82C /* Cocoa.framework */,
 				4C59966C19145A4900EFA82C /* XCTest.framework */,
+				4C1FDE3A193613D700ACA448 /* Foundation.framework */,
+				4C1FDE4A193613D800ACA448 /* UIKit.framework */,
 				4C59965919145A4900EFA82C /* Other Frameworks */,
 				3F08C97F96A34A0F8AE9D657 /* libPods.a */,
+				68214E7B330146CF89371C6D /* libPods-MFMigrationManager.Mac.a */,
+				CFAFBBF9E04145C7BFD9B526 /* libPods-MFMigrationManager.Mac.Tests.a */,
+				EFBEEB8F4DED45ACB66C909A /* libPods-MFMigrationManager.iOS.a */,
+				5982F2B4839549A98C81960B /* libPods-MFMigrationManager.iOS.Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,8 +180,8 @@
 		4CC18D4319145C9B00CEECEC /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				4CBD7F4B191A02E0006B83E8 /* MFMigrationManager.h */,
-				4CBD7F4C191A02E0006B83E8 /* MFMigrationManager.m */,
+				4CDD635019232E7800936B49 /* MFMigrationManager.h */,
+				4CA7F00419381F5400900ED5 /* MFMigrationManager.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -169,8 +189,7 @@
 		4CC18D4919145CA300CEECEC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4CBD7F51191A0EEA006B83E8 /* MFMigrationManagerSpec.m */,
-				4CC18D4A19145CA300CEECEC /* MFMigrationManagerTests-Info.plist */,
+				4CA7F00719381F6700900ED5 /* MFMigrationManagerSpec.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -178,10 +197,11 @@
 		4CC252DB191C1E5D00E49DF7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4C6128DD192AA4A400FD380B /* CHANGELOG.md */,
+				4C6128DE192AA53A00FD380B /* CHANGELOG.md */,
+				4C1FDE661936162700ACA448 /* MFMigrationManager-Info.plist */,
 				4CC18D4419145C9B00CEECEC /* MFMigrationManager-Prefix.pch */,
-				4CC18D4519145C9B00CEECEC /* MFMigrationManager.Mac-Info.plist */,
 				4CC252DC191C1E7300E49DF7 /* MFMigrationManager.podspec */,
+				4CC18D4A19145CA300CEECEC /* MFMigrationManagerTests-Info.plist */,
 				4CC252DD191C1E7300E49DF7 /* README.md */,
 			);
 			name = "Supporting Files";
@@ -194,33 +214,59 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CBD7F4E191A02E0006B83E8 /* MFMigrationManager.h in Headers */,
 				4CECFCF319145E540022AA2A /* MFMigrationManager-Prefix.pch in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CC18D2119145C6400CEECEC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CBD7F4D191A02E0006B83E8 /* MFMigrationManager.h in Headers */,
-				4CC18D4719145C9B00CEECEC /* MFMigrationManager-Prefix.pch in Headers */,
+				4CDD635219232E7800936B49 /* MFMigrationManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4C1FDE38193613D700ACA448 /* MFMigrationManager.iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C1FDE57193613D800ACA448 /* Build configuration list for PBXNativeTarget "MFMigrationManager.iOS" */;
+			buildPhases = (
+				4C1FDE35193613D700ACA448 /* Sources */,
+				4C1FDE36193613D700ACA448 /* Frameworks */,
+				4C1FDE37193613D700ACA448 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MFMigrationManager.iOS;
+			productName = MFMigrationManager.iOS;
+			productReference = 4C1FDE39193613D700ACA448 /* libMFMigrationManager.iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4C1FDE46193613D700ACA448 /* MFMigrationManager.iOS.Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C1FDE5A193613D800ACA448 /* Build configuration list for PBXNativeTarget "MFMigrationManager.iOS.Tests" */;
+			buildPhases = (
+				4898FEF94C524EE383B89CEC /* Check Pods Manifest.lock */,
+				4C1FDE43193613D700ACA448 /* Sources */,
+				4C1FDE44193613D700ACA448 /* Frameworks */,
+				4C1FDE45193613D700ACA448 /* Resources */,
+				4B7A7AEFE71E45188F5876B9 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C1FDE4D193613D800ACA448 /* PBXTargetDependency */,
+			);
+			name = MFMigrationManager.iOS.Tests;
+			productName = MFMigrationManager.iOSTests;
+			productReference = 4C1FDE47193613D800ACA448 /* MFMigrationManager.iOS.Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4C5BB18119145D24009CB21B /* MFMigrationManager.Mac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C5BB1A019145D25009CB21B /* Build configuration list for PBXNativeTarget "MFMigrationManager.Mac" */;
 			buildPhases = (
-				02C4FFE30FCA40E4AE427546 /* Check Pods Manifest.lock */,
 				4C5BB17D19145D24009CB21B /* Sources */,
 				4C5BB17E19145D24009CB21B /* Frameworks */,
 				4C5BB17F19145D24009CB21B /* Headers */,
 				4C5BB18019145D24009CB21B /* Resources */,
-				5936817F68EB443FA4F105D0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,11 +281,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C5BB1A319145D25009CB21B /* Build configuration list for PBXNativeTarget "MFMigrationManager.Mac.Tests" */;
 			buildPhases = (
-				B8F8C71AE25042B8B08FF5C2 /* Check Pods Manifest.lock */,
+				A56814E8B7304D77BD2DF287 /* Check Pods Manifest.lock */,
 				4C5BB18E19145D25009CB21B /* Sources */,
 				4C5BB18F19145D25009CB21B /* Frameworks */,
 				4C5BB19019145D25009CB21B /* Resources */,
-				A96DF2805EA5499CB3C764B6 /* Copy Pods Resources */,
+				E228483FB0BC448187C647CB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,45 +297,6 @@
 			productReference = 4C5BB19219145D25009CB21B /* MFMigrationManager.Mac.Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4CC18D2219145C6400CEECEC /* MFMigrationManager.iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4CC18D3D19145C6400CEECEC /* Build configuration list for PBXNativeTarget "MFMigrationManager.iOS" */;
-			buildPhases = (
-				F40A7A054D0C4CA48AF77CF5 /* Check Pods Manifest.lock */,
-				4CC18D1F19145C6400CEECEC /* Sources */,
-				4CC18D2019145C6400CEECEC /* Frameworks */,
-				4CC18D2119145C6400CEECEC /* Headers */,
-				0C2DEE17C7AC48A180A512ED /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MFMigrationManager.iOS;
-			productName = MFMigrationManager.iOS;
-			productReference = 4CC18D2319145C6400CEECEC /* MFMigrationManager.iOS.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
-		};
-		4CC18D2E19145C6400CEECEC /* MFMigrationManager.iOS.Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4CC18D4019145C6400CEECEC /* Build configuration list for PBXNativeTarget "MFMigrationManager.iOS.Tests" */;
-			buildPhases = (
-				2831C023833445B6945D7BE8 /* Check Pods Manifest.lock */,
-				4CC18D2B19145C6400CEECEC /* Sources */,
-				4CC18D2C19145C6400CEECEC /* Frameworks */,
-				4CC18D2D19145C6400CEECEC /* Resources */,
-				7A6F756BB7B944A1B8680F7E /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4CC18D3319145C6400CEECEC /* PBXTargetDependency */,
-			);
-			name = MFMigrationManager.iOS.Tests;
-			productName = MFMigrationManager.iOSTests;
-			productReference = 4CC18D2F19145C6400CEECEC /* MFMigrationManager.iOS.Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -299,11 +306,11 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Michaël Fortin";
 				TargetAttributes = {
-					4C5BB19119145D25009CB21B = {
-						TestTargetID = 4CC18D2219145C6400CEECEC;
+					4C1FDE46193613D700ACA448 = {
+						TestTargetID = 4C5BB18119145D24009CB21B;
 					};
-					4CC18D2E19145C6400CEECEC = {
-						TestTargetID = 4CC18D2219145C6400CEECEC;
+					4C5BB19119145D25009CB21B = {
+						TestTargetID = 4C5BB18119145D24009CB21B;
 					};
 				};
 			};
@@ -319,8 +326,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4CC18D2219145C6400CEECEC /* MFMigrationManager.iOS */,
-				4CC18D2E19145C6400CEECEC /* MFMigrationManager.iOS.Tests */,
+				4C1FDE38193613D700ACA448 /* MFMigrationManager.iOS */,
+				4C1FDE46193613D700ACA448 /* MFMigrationManager.iOS.Tests */,
 				4C5BB18119145D24009CB21B /* MFMigrationManager.Mac */,
 				4C5BB19119145D25009CB21B /* MFMigrationManager.Mac.Tests */,
 			);
@@ -328,6 +335,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4C1FDE45193613D700ACA448 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C5BB18019145D24009CB21B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,17 +356,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CC18D2D19145C6400CEECEC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02C4FFE30FCA40E4AE427546 /* Check Pods Manifest.lock */ = {
+		4898FEF94C524EE383B89CEC /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -367,7 +374,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		0C2DEE17C7AC48A180A512ED /* Copy Pods Resources */ = {
+		4B7A7AEFE71E45188F5876B9 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,10 +386,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-MFMigrationManager.iOS.Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2831C023833445B6945D7BE8 /* Check Pods Manifest.lock */ = {
+		A56814E8B7304D77BD2DF287 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,7 +404,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5936817F68EB443FA4F105D0 /* Copy Pods Resources */ = {
+		E228483FB0BC448187C647CB /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -409,77 +416,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A6F756BB7B944A1B8680F7E /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A96DF2805EA5499CB3C764B6 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B8F8C71AE25042B8B08FF5C2 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F40A7A054D0C4CA48AF77CF5 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-MFMigrationManager.Mac.Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4C1FDE35193613D700ACA448 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CA7F00519381F5400900ED5 /* MFMigrationManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C1FDE43193613D700ACA448 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CA7F00819381F6700900ED5 /* MFMigrationManagerSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C5BB17D19145D24009CB21B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CBD7F50191A02E0006B83E8 /* MFMigrationManager.m in Sources */,
+				4CA7F00619381F5400900ED5 /* MFMigrationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,42 +450,98 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CBD7F53191A0EEA006B83E8 /* MFMigrationManagerSpec.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CC18D1F19145C6400CEECEC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CBD7F4F191A02E0006B83E8 /* MFMigrationManager.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CC18D2B19145C6400CEECEC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CBD7F52191A0EEA006B83E8 /* MFMigrationManagerSpec.m in Sources */,
+				4CA7F00919381F6700900ED5 /* MFMigrationManagerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4C1FDE4D193613D800ACA448 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C1FDE38193613D700ACA448 /* MFMigrationManager.iOS */;
+			targetProxy = 4C1FDE4C193613D800ACA448 /* PBXContainerItemProxy */;
+		};
 		4C5BB19619145D25009CB21B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4C5BB18119145D24009CB21B /* MFMigrationManager.Mac */;
 			targetProxy = 4C5BB19519145D25009CB21B /* PBXContainerItemProxy */;
 		};
-		4CC18D3319145C6400CEECEC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4CC18D2219145C6400CEECEC /* MFMigrationManager.iOS */;
-			targetProxy = 4CC18D3219145C6400CEECEC /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4C1FDE58193613D800ACA448 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MFMigrationManager_iOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/MFMigrationManager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Source/MFMigrationManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4C1FDE59193613D800ACA448 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MFMigrationManager_iOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/MFMigrationManager-Prefix.pch";
+				INFOPLIST_FILE = "Source/MFMigrationManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C1FDE5B193613D800ACA448 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72A982300F69404B872EBE6C /* Pods-MFMigrationManager.iOS.Tests.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tests/MFMigrationManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4C1FDE5C193613D800ACA448 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72A982300F69404B872EBE6C /* Pods-MFMigrationManager.iOS.Tests.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "Tests/MFMigrationManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		4C59967A19145A4900EFA82C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -557,9 +576,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wno-undeclared-selector";
 			};
 			name = Debug;
@@ -591,15 +610,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				WARNING_CFLAGS = "-Wno-undeclared-selector";
 			};
 			name = Release;
 		};
 		4C5BB1A119145D25009CB21B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -611,7 +629,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Source/MFMigrationManager.Mac-Info.plist";
+				INFOPLIST_FILE = "Source/MFMigrationManager-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -619,7 +637,6 @@
 		};
 		4C5BB1A219145D25009CB21B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -627,7 +644,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/MFMigrationManager-Prefix.pch";
-				INFOPLIST_FILE = "Source/MFMigrationManager.Mac-Info.plist";
+				INFOPLIST_FILE = "Source/MFMigrationManager-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -635,9 +652,9 @@
 		};
 		4C5BB1A419145D25009CB21B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
+			baseConfigurationReference = 216E091F7A5D4C3ABE585D87 /* Pods-MFMigrationManager.Mac.Tests.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFMigrationManager.iOS.dylib";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFMigrationManager.Mac.framework/Versions/A/MFMigrationManager.Mac";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -657,77 +674,9 @@
 		};
 		4C5BB1A519145D25009CB21B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
+			baseConfigurationReference = 216E091F7A5D4C3ABE585D87 /* Pods-MFMigrationManager.Mac.Tests.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFMigrationManager.iOS.dylib";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INFOPLIST_FILE = "Tests/MFMigrationManagerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-		4CC18D3E19145C6400CEECEC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Source/MFMigrationManager-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		4CC18D3F19145C6400CEECEC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Source/MFMigrationManager-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		4CC18D4119145C6400CEECEC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFMigrationManager.iOS.dylib";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Tests/MFMigrationManagerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		4CC18D4219145C6400CEECEC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38990A9BF186483784019B54 /* Pods.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFMigrationManager.iOS.dylib";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MFMigrationManager.Mac.framework/Versions/A/MFMigrationManager.Mac";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -744,6 +693,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4C1FDE57193613D800ACA448 /* Build configuration list for PBXNativeTarget "MFMigrationManager.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C1FDE58193613D800ACA448 /* Debug */,
+				4C1FDE59193613D800ACA448 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C1FDE5A193613D800ACA448 /* Build configuration list for PBXNativeTarget "MFMigrationManager.iOS.Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C1FDE5B193613D800ACA448 /* Debug */,
+				4C1FDE5C193613D800ACA448 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4C59964E19145A4900EFA82C /* Build configuration list for PBXProject "MFMigrationManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -767,24 +734,6 @@
 			buildConfigurations = (
 				4C5BB1A419145D25009CB21B /* Debug */,
 				4C5BB1A519145D25009CB21B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4CC18D3D19145C6400CEECEC /* Build configuration list for PBXNativeTarget "MFMigrationManager.iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CC18D3E19145C6400CEECEC /* Debug */,
-				4CC18D3F19145C6400CEECEC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4CC18D4019145C6400CEECEC /* Build configuration list for PBXNativeTarget "MFMigrationManager.iOS.Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CC18D4119145C6400CEECEC /* Debug */,
-				4CC18D4219145C6400CEECEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

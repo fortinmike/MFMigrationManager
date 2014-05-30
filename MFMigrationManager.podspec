@@ -13,5 +13,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'MFMigrationManager/Source'
+  s.prefix_header_file = 'MFMigrationManager/Source/MFMigrationManager-Prefix.pch'
   s.public_header_files = 'MFMigrationManager/Source/**/*.h'
 end
