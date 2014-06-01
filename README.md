@@ -1,5 +1,6 @@
 # MFMigrationManager
 
+[![Build Status](https://travis-ci.org/fortinmike/MFMigrationManager.svg?branch=master)](https://travis-ci.org/fortinmike/MFMigrationManager)
 [![Coverage Status](https://coveralls.io/repos/fortinmike/MFMigrationManager/badge.png?branch=master)](https://coveralls.io/r/fortinmike/MFMigrationManager?branch=master)
 [![Version](http://cocoapod-badges.herokuapp.com/v/MFMigrationManager/badge.png)](http://cocoadocs.org/docsets/MFMigrationManager)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/MFMigrationManager/badge.png)](http://cocoadocs.org/docsets/MFMigrationManager)
