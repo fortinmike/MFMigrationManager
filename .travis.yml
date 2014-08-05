@@ -7,7 +7,6 @@ before_install:
   - export LANG=en_US.UTF-8
   - gem install cocoapods --no-rdoc
   - brew update
-  - brew upgrade xctool
   - sudo easy_install cpp-coveralls
 script: Scripts/travis-build.sh "MFMigrationManager"
 after_success: Scripts/coveralls.rb --extension m --exclude-folder MFMigrationManager/Pods --exclude-folder MFMigrationManager/Tests
